@@ -18,21 +18,30 @@ const slides = [
 ]
 const arrowleft = document.querySelector(".arrow_left")
 const arrowright = document.querySelector(".arrow_right")
-const dots = document.querySelectorAll('.dot');
+const dot = document.querySelectorAll('.dot');
 let index = 0
 let bannerimg = document.querySelector(".banner-img")
+let dotselected = document.querySelector(".dot_selected")
 
 arrowleft.addEventListener("click", () => {
 index--;
+if(index<0){index = slides.length - 1;}
+	bannerimg.src = "./assets/images/slideshow/"+slides[index].image;
+	
 })
-console.log(arrowleft)
 
-arrowright.addEventListener("click", () => {
-	if (arrowright){slide1++}
+arrowright.addEventListener("click", () =>
+{index++;
+if(index > slides.length -1){index = 0;}
+bannerimg.src = "./assets/images/slideshow/"+slides[index].image;
+
+
 })
-console.log(arrowright)
 
-if (dots) {
+function updatedots (index, dot){
+dot.forEach(dot) => 
+if(index = dot)
+{ dot.classList.add('dot_selected');}
+else {dot.classList.remove('dot_selected');}
+console.log(index)}
 
-}
-function updateDots (dots, slide1)
